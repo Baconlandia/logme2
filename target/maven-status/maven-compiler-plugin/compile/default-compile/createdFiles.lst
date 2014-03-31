@@ -1,0 +1,5 @@
+com\agilemobiledeveloper\logme\LogController.class
+com\agilemobiledeveloper\logme\MongoConfiguration.class
+com\agilemobiledeveloper\logme\LogResponse.class
+com\agilemobiledeveloper\logme\LogEntry.class
+com\agilemobiledeveloper\logme\LogDataService.class
