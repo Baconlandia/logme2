@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
+import  com.agilemobiledeveloper.logme.util.*;
 import com.google.common.base.Joiner;
 
 @Controller
@@ -57,8 +57,10 @@ public class LogController {
 		if (logDataService != null && logEntry != null) {
 			Joiner joiner = Joiner.on(": ").skipNulls();
 			
+   SystemInformation sysInfo = new SystemInformation();
+   
 			logEntry.setLogMessage(
-					joiner.join(userIpAddress, userAgent, logEntry.getLogMessage()));
+					joiner.join(userIpAddress, userAgent, sysInfo, logEntry.getLogMessage()));
 					
 			logDataService.addLogMessage(logEntry);
 		}
